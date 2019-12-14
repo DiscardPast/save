@@ -1,0 +1,11 @@
+package ${packagePath}.${moduleName}.action;
+
+import org.springframework.stereotype.Component;
+/**
+ * @apiNote $!{tableInfo.comments}(${tableInfo.upperClassName})业务逻辑服务类
+ * @author ${author}
+ * @since ${datetime}
+ */
+@Component
+public class ${tableInfo.upperClassName}Action{
+}

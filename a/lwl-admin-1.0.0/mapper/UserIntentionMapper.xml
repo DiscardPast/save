@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.discardpast.louwailou.mapper.UserIntentionMapper">
+
+    <!-- UserIntention映射 -->
+    <resultMap type="com.discardpast.louwailou.domain.UserIntention" id="BaseResultMap">
+        <result property="id" column="id" jdbcType="BIGINT" />
+        <result property="houseId" column="house_id" jdbcType="BIGINT" />
+        <result property="userId" column="user_id" jdbcType="BIGINT" />
+        <result property="followId" column="follow_id" jdbcType="BIGINT" />
+        <result property="remark" column="remark" jdbcType="VARCHAR" />
+        <result property="takeTime" column="take_time" jdbcType="TIMESTAMP" />
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP" />
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP" />
+        <result property="deleted" column="deleted" jdbcType="BIT" />
+            </resultMap>
+
+    <sql id="Base_Column_List">
+      id,house_id,user_id,follow_id,remark,take_time,create_time,update_time,deleted
+    </sql>
+
+    <!--通过用户Id查询用户意向表-->
+    <select id="selectUserIntentionByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user_intention where deleted = 0 and user_id = #{userId}
+    </select>
+</mapper>

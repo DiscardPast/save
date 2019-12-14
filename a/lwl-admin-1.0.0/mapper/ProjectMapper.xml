@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.discardpast.louwailou.mapper.ProjectMapper">
+
+    <!-- Project映射 -->
+    <resultMap type="com.discardpast.louwailou.domain.Project" id="BaseResultMap">
+        <result property="id" column="id" jdbcType="BIGINT" />
+        <result property="developer" column="developer" jdbcType="VARCHAR" />
+        <result property="region" column="region" jdbcType="VARCHAR" />
+        <result property="saleStatus" column="sale_status" jdbcType="TINYINT" />
+        <result property="propertyYears" column="property_years" jdbcType="TINYINT" />
+        <result property="propertyType" column="property_type" jdbcType="TINYINT" />
+        <result property="volumeRate" column="volume_rate" jdbcType="TINYINT" />
+        <result property="greeningRate" column="greening_rate" jdbcType="TINYINT" />
+        <result property="householdsNum" column="households_num" jdbcType="TINYINT" />
+        <result property="propertyCompany" column="property_company" jdbcType="VARCHAR" />
+        <result property="propertyCosts" column="property_costs" jdbcType="TINYINT" />
+        <result property="decorationStatus" column="decoration_status" jdbcType="TINYINT" />
+        <result property="handingHouseTime" column="handing_house_time" jdbcType="TIMESTAMP" />
+        <result property="parkingSpace" column="parking_space" jdbcType="BIGINT" />
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP" />
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP" />
+        <result property="deleted" column="deleted" jdbcType="BIT" />
+            </resultMap>
+
+    <sql id="Base_Column_List">
+      id,developer,region,sale_status,property_years,property_type,volume_rate,greening_rate,households_num,property_company,property_costs,decoration_status,handing_house_time,parking_space,create_time,update_time,deleted
+    </sql>
+
+    <!--通过用户Id查询项目信息表-->
+    <select id="selectProjectByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_project where deleted = 0 and user_id = #{userId}
+    </select>
+</mapper>

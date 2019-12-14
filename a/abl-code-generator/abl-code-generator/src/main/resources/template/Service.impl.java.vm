@@ -1,0 +1,43 @@
+package ${packagePath}.${moduleName}.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+#if(${baseServiceConfig.exist})
+import ${baseEntityConfig.packageRelativePath};
+#end
+import ${packagePath}.${moduleName}.service.${tableInfo.upperClassName}Service;
+import ${packagePath}.${moduleName}.mapper.${tableInfo.upperClassName}Mapper;
+import ${packagePath}.${moduleName}.domain.${tableInfo.upperClassName};
+
+
+/**
+ * @author ${author}
+ * @apiNote $!{tableInfo.comments}(${tableInfo.upperClassName})服务实现类
+ * @since ${datetime}
+ */
+@Service
+public class ${tableInfo.upperClassName}ServiceImpl implements ${tableInfo.upperClassName}Service {
+
+    @Autowired
+    private ${tableInfo.upperClassName}Mapper ${tableInfo.lowerClassName}Mapper;
+
+    @Override
+    public ${tableInfo.upperClassName} queryById(Long id) {
+        return this.${tableInfo.lowerClassName}Mapper.selectById(id);
+    }
+
+    @Override
+    public Integer add${tableInfo.upperClassName}(${tableInfo.upperClassName} ${tableInfo.lowerClassName}) {
+        return this.${tableInfo.lowerClassName}Mapper.insert(${tableInfo.lowerClassName});
+    }
+
+    @Override
+    public Integer update${tableInfo.upperClassName}(${tableInfo.upperClassName} ${tableInfo.lowerClassName}) {
+        return this.${tableInfo.lowerClassName}Mapper.updateById(${tableInfo.lowerClassName});
+    }
+
+    @Override
+    public Integer remove${tableInfo.upperClassName}ById(Long id) {
+        return this.${tableInfo.lowerClassName}Mapper.deleteById(id);
+    }
+}

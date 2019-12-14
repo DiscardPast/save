@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.discardpast.louwailou.mapper.StaffMapper">
+
+    <!-- Staff映射 -->
+    <resultMap type="com.discardpast.louwailou.domain.Staff" id="BaseResultMap">
+        <result property="id" column="id" jdbcType="TINYINT" />
+        <result property="code" column="code" jdbcType="VARCHAR" />
+        <result property="gender" column="gender" jdbcType="TINYINT" />
+        <result property="name" column="name" jdbcType="VARCHAR" />
+        <result property="phone" column="phone" jdbcType="VARCHAR" />
+        <result property="username" column="username" jdbcType="VARCHAR" />
+        <result property="password" column="password" jdbcType="VARCHAR" />
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP" />
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP" />
+        <result property="deleted" column="deleted" jdbcType="BIT" />
+            </resultMap>
+
+    <sql id="Base_Column_List">
+      id,code,gender,name,phone,username,password,create_time,update_time,deleted
+    </sql>
+
+    <!--通过用户Id查询员工表-->
+    <select id="selectStaffByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_staff where deleted = 0 and user_id = #{userId}
+    </select>
+</mapper>

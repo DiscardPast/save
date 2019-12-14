@@ -1,0 +1,45 @@
+package ${packagePath}.${moduleName}.service;
+
+#if(${baseServiceConfig.exist})
+import ${baseEntityConfig.packageRelativePath};
+#else
+#end
+import ${packagePath}.${moduleName}.domain.${tableInfo.upperClassName};
+
+
+/**
+ * @author ${author}
+ * @apiNote $!{tableInfo.comments}(${tableInfo.upperClassName})服务接口
+ * @since ${datetime}
+ */
+public interface ${tableInfo.upperClassName}Service {
+
+    /**
+     * 通过id查询一条$!{tableInfo.comments}数据
+     * @param id
+     * @return
+     */
+     ${tableInfo.upperClassName} queryById(Long id);
+
+
+    /**
+     * 插入一条$!{tableInfo.comments}数据
+     * @param ${tableInfo.lowerClassName}
+     * @return
+     */
+     Integer add${tableInfo.upperClassName}(${tableInfo.upperClassName} ${tableInfo.lowerClassName});
+
+    /**
+     * 更新一条$!{tableInfo.comments}数据
+     * @param ${tableInfo.lowerClassName}
+     * @return
+     */
+     Integer update${tableInfo.upperClassName}(${tableInfo.upperClassName} ${tableInfo.lowerClassName});
+
+    /**
+     * 移除一条$!{tableInfo.comments}数据
+     * @param id
+     * @return
+     */
+     Integer remove${tableInfo.upperClassName}ById(Long id);
+}

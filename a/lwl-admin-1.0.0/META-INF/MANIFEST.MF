@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Implementation-Title: lwl-admin
+Implementation-Version: 1.0.0
+Built-By: Disca
+Implementation-Vendor-Id: com.discardpast
+Class-Path: lib/lwl-base-1.0.0.jar lib/mybatis-plus-boot-starter-3.2.0
+ .jar lib/mybatis-plus-3.2.0.jar lib/mybatis-plus-extension-3.2.0.jar 
+ lib/mybatis-plus-core-3.2.0.jar lib/mybatis-plus-annotation-3.2.0.jar
+  lib/jsqlparser-2.1.jar lib/mybatis-3.5.2.jar lib/mybatis-spring-2.0.
+ 2.jar lib/spring-boot-autoconfigure-2.0.8.RELEASE.jar lib/spring-boot
+ -2.0.8.RELEASE.jar lib/spring-boot-starter-jdbc-2.0.8.RELEASE.jar lib
+ /HikariCP-2.7.9.jar lib/spring-jdbc-5.0.12.RELEASE.jar lib/spring-tx-
+ 5.0.12.RELEASE.jar lib/lombok-1.16.22.jar lib/springfox-swagger2-2.8.
+ 0.jar lib/swagger-annotations-1.5.14.jar lib/swagger-models-1.5.14.ja
+ r lib/springfox-spi-2.8.0.jar lib/springfox-core-2.8.0.jar lib/byte-b
+ uddy-1.7.11.jar lib/springfox-schema-2.8.0.jar lib/springfox-swagger-
+ common-2.8.0.jar lib/springfox-spring-web-2.8.0.jar lib/reflections-0
+ .9.11.jar lib/javassist-3.21.0-GA.jar lib/guava-20.0.jar lib/classmat
+ e-1.3.4.jar lib/slf4j-api-1.7.25.jar lib/spring-plugin-core-1.2.0.REL
+ EASE.jar lib/spring-beans-5.0.12.RELEASE.jar lib/spring-context-5.0.1
+ 2.RELEASE.jar lib/spring-aop-5.0.12.RELEASE.jar lib/spring-plugin-met
+ adata-1.2.0.RELEASE.jar lib/mapstruct-1.2.0.Final.jar lib/springfox-s
+ wagger-ui-2.8.0.jar lib/jackson-datatype-joda-2.9.4.jar lib/jackson-a
+ nnotations-2.9.0.jar lib/jackson-core-2.9.4.jar lib/jackson-databind-
+ 2.9.4.jar lib/joda-time-2.9.9.jar lib/mysql-connector-java-5.1.47.jar
+  lib/spring-boot-starter-web-2.0.8.RELEASE.jar lib/spring-boot-starte
+ r-2.0.8.RELEASE.jar lib/spring-boot-starter-logging-2.0.8.RELEASE.jar
+  lib/logback-classic-1.2.3.jar lib/logback-core-1.2.3.jar lib/log4j-t
+ o-slf4j-2.10.0.jar lib/log4j-api-2.10.0.jar lib/jul-to-slf4j-1.7.25.j
+ ar lib/javax.annotation-api-1.3.2.jar lib/spring-core-5.0.12.RELEASE.
+ jar lib/spring-jcl-5.0.12.RELEASE.jar lib/snakeyaml-1.19.jar lib/spri
+ ng-boot-starter-json-2.0.8.RELEASE.jar lib/jackson-datatype-jdk8-2.9.
+ 4.jar lib/jackson-datatype-jsr310-2.9.4.jar lib/jackson-module-parame
+ ter-names-2.9.4.jar lib/spring-boot-starter-tomcat-2.0.8.RELEASE.jar 
+ lib/tomcat-embed-core-8.5.37.jar lib/tomcat-embed-el-8.5.37.jar lib/t
+ omcat-embed-websocket-8.5.37.jar lib/hibernate-validator-6.0.14.Final
+ .jar lib/validation-api-2.0.1.Final.jar lib/jboss-logging-3.3.2.Final
+ .jar lib/spring-web-5.0.12.RELEASE.jar lib/spring-webmvc-5.0.12.RELEA
+ SE.jar lib/spring-expression-5.0.12.RELEASE.jar
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_201
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/lwl-parent/lwl-admin
+Main-Class: com.discardpast.louwailou.LouwailouApplication
+

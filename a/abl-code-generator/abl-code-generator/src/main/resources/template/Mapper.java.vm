@@ -1,0 +1,16 @@
+package ${packagePath}.${moduleName}.mapper;
+
+import ${packagePath}.${moduleName}.domain.${tableInfo.upperClassName};
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ *
+ * @author ${author}
+ * @apiNote $!{tableInfo.comments}(${tableInfo.upperClassName})表数据库访问层
+ * @since  ${datetime}
+ */
+@Mapper
+public interface ${tableInfo.upperClassName}Mapper extends BaseMapper<${tableInfo.upperClassName}> {
+
+}

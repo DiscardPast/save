@@ -1,0 +1,53 @@
+package ${packagePath}.${moduleName}.domain;
+
+import java.util.Date;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.discardpast.louwailou.base.domain.DataEntity;
+#if(${usualFrameConfig.useSwagger})
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+#end
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+#if(${hasBigDecimal})
+import java.math.BigDecimal;
+#end
+
+/**
+ * @apiNote $!{tableInfo.comments}(${tableInfo.upperClassName})实体类
+ * @author ${author}
+ * @since ${datetime}
+ */
+@EqualsAndHashCode(callSuper = true)
+@Data
+@TableName("${tableInfo.tableName}")
+@ApiModel(value = "${tableInfo.upperClassName}",description = "$!{tableInfo.comments}")
+public class ${tableInfo.upperClassName} extends DataEntity{
+
+#foreach ($column in ${tableInfo.columns})
+#set($generator = true)
+#if(${baseEntityConfig.exist})
+#foreach($ignoreAttribute in ${ignoreAttributes})
+#if($ignoreAttribute == ${column.columnName})
+#set($generator = false)
+#break
+#end
+#end
+#end
+#if($generator)
+    /** $!{column.comments} */
+#if(${column.columnName} == ${tableInfo.pk.columnName})
+    @TableId(type = IdType.AUTO)
+#else
+    @TableField(value="${column.columnName}")
+#end
+#if(${usualFrameConfig.useSwagger})
+    @ApiModelProperty(name="${column.lowerAttrName}",value = "$!{column.comments}")
+#end
+    private ${column.attrType} ${column.lowerAttrName};
+
+#end
+#end
+
+}

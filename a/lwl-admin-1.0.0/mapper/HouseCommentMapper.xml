@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.discardpast.louwailou.mapper.HouseCommentMapper">
+
+    <!-- HouseComment映射 -->
+    <resultMap type="com.discardpast.louwailou.domain.HouseComment" id="BaseResultMap">
+        <result property="id" column="id" jdbcType="BIGINT" />
+        <result property="houseId" column="house_id" jdbcType="BIGINT" />
+        <result property="commentUserId" column="comment_member_id" jdbcType="BIGINT" />
+        <result property="replyCommentId" column="reply_comment_id" jdbcType="BIGINT" />
+        <result property="replyUserId" column="reply_member_id" jdbcType="BIGINT" />
+        <result property="commentType" column="comment_type" jdbcType="TINYINT" />
+        <result property="content" column="content" jdbcType="VARCHAR" />
+        <result property="readStatus" column="read_status" jdbcType="BIT" />
+        <result property="like" column="like" jdbcType="TINYINT" />
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP" />
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP" />
+        <result property="deleted" column="deleted" jdbcType="BIT" />
+            </resultMap>
+
+    <sql id="Base_Column_List">
+      id,house_id,comment_member_id,reply_comment_id,reply_member_id,comment_type,content,read_status,like,create_time,update_time,deleted
+    </sql>
+
+    <!--通过用户Id查询房屋评论信息表-->
+    <select id="selectHouseCommentByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_house_comment where deleted = 0 and user_id = #{userId}
+    </select>
+</mapper>
